@@ -30,6 +30,21 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 Where 'password' is the new password, unsure why this works but it does.
 
 ## Using MySQL with node.js in production
-https://www.terlici.com/2015/08/13/mysql-node-express.html
+To create a table if it doesn't exist!
+```
+var createItems = `CREATE TABLE IF NOT EXISTS items(
+                        id INT NOT NULL AUTO_INCREMENT,
+                        name VARCHAR(255) NOT NULL,
+                        instock INT NOT NULL,
+                        total INT NOT NULL,
+                        description TEXT,
+                        signed_out_by VARCHAR(255),
+                        PRIMARY KEY (id),
+                        UNIQUE (name)
+                    )`;
+```
+
+Models will be creation methods to hide the actual database query.
+
 
 
