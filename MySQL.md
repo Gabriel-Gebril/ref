@@ -46,5 +46,8 @@ var createItems = `CREATE TABLE IF NOT EXISTS items(
 
 Models will be creation methods to hide the actual database query.
 
-
+## Selecting rows with offset
+```
+SELECT * FROM tbl LIMIT 5,10;  # Retrieve rows 6-15
+```
 
